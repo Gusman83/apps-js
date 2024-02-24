@@ -11,17 +11,16 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
+    name: Node.js
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '16'
-          check-latest: true
+          node-version: '20.0.0-v8-canary' # it will install the latest v8 canary release for node 20.0.0
           username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}  
+          password: ${{ secrets.DOCKERHUB_TOKEN }}        
       - run: npm ci
-      - run: npm tes
+      - run: npm test
+       
       
