@@ -28,4 +28,4 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: guzman83/node-js-writter:latest
+        tags: guzman83/nodejs-web:latest
